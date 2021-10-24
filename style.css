@@ -1,0 +1,63 @@
+:root {
+  --color-1: #003300;
+  --color-2: #330033;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* .main {
+  display: flex;
+  flex-direction: column;
+} */
+
+body {
+  margin: 1rem 0 0 0.5rem;
+  color: var(--color-1);
+}
+
+h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 60px;
+  text-decoration: underline;
+}
+
+h1,
+.text-box {
+  margin-bottom: 0.5rem;
+}
+
+p {
+  width: 500px;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+
+  font-family: "STIX Two Math", serif;
+}
+
+p.tip {
+  font-style: italic;
+  opacity: 70%;
+}
+
+.button {
+  padding: 0.4rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 1em;
+  color: var(--color-1);
+  text-decoration: none;
+  border: 1px solid var(--color-1);
+  /* border-width: thin; */
+  background-color: transparent;
+}
+
+.button:hover {
+  background-color: var(--color-1);
+  color: white;
+}
+
+/* textarea {
+  outline-color: var(--color-2);
+} */
