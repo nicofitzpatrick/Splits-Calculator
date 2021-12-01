@@ -31,7 +31,7 @@ const sumCheck = (s) => {
 const extractor = () => {
   //check text has been entered
   if (document.getElementById("txt-box").value == "") {
-    result.innerHTML = "Enter text above";
+    result.innerHTML = "Enter details above";
   } else {
     //clear result text
     result.innerHTML = "";
