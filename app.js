@@ -2,6 +2,9 @@
 const btn1 = document.getElementById("btn-check");
 const btn2 = document.getElementById("btn-clear");
 const result = document.getElementById("result");
+const clipboard = document.getElementById("clipboard");
+const example = document.getElementById("example");
+const copied = document.getElementById("copied");
 
 //function to clear app
 const clear = () => {
@@ -12,16 +15,16 @@ const clear = () => {
 //function to check if total number of splits equal 100%
 const sumCheck = (s) => {
   if (s === 100) {
-    result.style.color = "blue";
-    return (result.innerHTML = "Total splits equal 100%!");
+    result.style.color = "#6ed490";
+    return (result.innerHTML = "Total splits equal 100% 🎉");
   } else if (s < 100) {
     const dif = 100 - s;
     const rounded = Math.round((dif + Number.EPSILON) * 100) / 100;
-    return (result.innerHTML = `Total splits do not equal 100%. They are short by ${rounded}%.`);
+    return (result.innerHTML = `Total splits do not equal 100%, they are short by ${rounded}%.`);
   } else {
     const dif = s - 100;
     const rounded = Math.round((dif + Number.EPSILON) * 100) / 100;
-    return (result.innerHTML = `Total splits do not equal 100%. They are over by ${rounded}%.`);
+    return (result.innerHTML = `Total splits do not equal 100%, they are over by ${rounded}%.`);
   }
 };
 
@@ -31,7 +34,7 @@ const sumCheck = (s) => {
 const extractor = () => {
   //check text has been entered
   if (document.getElementById("txt-box").value == "") {
-    result.innerHTML = "Enter details above";
+    result.innerHTML = "Missing Details";
   } else {
     //clear result text
     result.innerHTML = "";
@@ -62,3 +65,12 @@ btn1.addEventListener("click", () => {
 });
 
 btn2.addEventListener("click", clear);
+
+//copy to clipboard
+clipboard.addEventListener("click", () => {
+  copied.classList.add("copied-fade");
+  setTimeout(() => {
+    copied.classList.remove("copied-fade");
+  }, 1500);
+  return navigator.clipboard.writeText(example.innerText);
+});

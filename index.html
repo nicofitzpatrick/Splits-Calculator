@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto&family=STIX+Two+Math&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
       rel="stylesheet"
     />
     <title>Splits Calculator</title>
@@ -18,9 +18,9 @@
     <!-- application name and short description -->
     <h1>Splits Calculator</h1>
     <p>
-      A simple music publishing application to validate share summaries (i.e. to
-      check if total splits tally 100%). Ideal for longer summaries with many
-      writers.
+      A simple music publishing application for validating share summaries (i.e. to
+      check if total splits tally 100%). Ideal for larger summaries with many
+      writers (see example below).
     </p>
     <p class="tip">
       Tip: Any copyright splits must be followed by a %, otherwise the number
@@ -29,21 +29,57 @@
 
     <!-- main application -->
     <div class="main">
-      <textarea
+   
+        <textarea
         class="text-box"
         id="txt-box"
         placeholder="enter share summary"
         name="text-box"
-        rows="4"
+        rows="10"
         cols="40"
         spellcheck="false"
       ></textarea>
+       
+     
       <br />
-      <div class="buttons">
-        <button class="button" id="btn-check" type="button">Check</button>
-        <button class="button" id="btn-clear" type="button">Clear</button>
+      <div class='container'>
+        <div class="flex">
+    
+          <button class="button green" id="btn-check" role="button">Check</button>
+          <button class="button pink" id="btn-clear" role="button">Clear</button>
+          <p class="result" id="result"></p>
+        </div>
+          
+      <div class="example">
+        <div class="flex example-header">
+          <h3>Example:</h6>
+            <img class="clipboard" id="clipboard" src="/clipboard.svg" alt="clipboard">
+            <p class="copied" id="copied">copied</p>
+        </div>
+        
+       
+        <p class="example-text" id="example">
+          Jan Myers - 37.5%<br />
+          Dave Oliver - 6.25%<br />
+          Craig Ware - 4.17%<br />
+          Jasmine Barnes - 6.25%<br />
+          Nigel Gorrie - 1.04%<br />
+          Ali Muhammed - 3.48%<br />
+          Melinda Stuart - 1.04%<br />
+          Kamaal Fareed - 3.48%<br />
+          Philip Duncan - 1.04%<br />
+          Eric Taylor - 3.47%<br />
+          Vanessa Riperton - 2.08%<br />
+          Eric Mcintyre - 1.04%<br />
+          Patrick Rudolph - 2.08%<br />
+          Roger Ball - 1.04%<br />
+          Stephen Ferrone - 1.04%<br />
+          Blake Robbins - 25%
+        </p>
+   
+     </div>
       </div>
-      <p id="result"></p>
+      
     </div>
 
     <script src="app.js"></script>
